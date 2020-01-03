@@ -1,0 +1,28 @@
+@mixin text-size($size, $line-height) {
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin b-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin color-border($color) {
+  border: 1px solid $color;
+}
+
+@mixin pt($size) {
+  padding-top: $size;
+}
+
+@mixin pb($size) {
+  padding-bottom: $size;
+}
+
+@mixin pl($size) {
+  padding-left: $size;
+}
+
+@mixin border-solid($size, $color) {
+  border: $size solid $color;
+}

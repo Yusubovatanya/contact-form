@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@import '../abstracts/variables';
+
+@include mat-core();
+
+$my-theme-primary: mat-palette($my-primary-palette, 500, 300, 200);
+$my-theme-accent: mat-palette($mat-amber, A200);
+$my-theme-warn: mat-palette($my-warn-palette, 500);
+$my-theme-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+@include angular-material-theme($my-theme-theme);

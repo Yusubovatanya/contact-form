@@ -1,0 +1,40 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+* {
+  font-family: 'Gotham Pro', 'Sans Serif';
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+body {
+  color: $dark-text;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h2 {
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: bold;
+  @extend .text-center;
+  margin: 0;
+}
+
+.p-10 {
+  @include text-size(10px, 20px)
+}
+
+.error-text {
+  color: $warn;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

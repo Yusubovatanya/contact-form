@@ -1,0 +1,103 @@
+<div class="contact-box">
+  <button mat-icon-button aria-label="Example icon-button with a heart icon" class="close-baton" (click)="exit()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div class="contact-container m-auto">
+    <h2 class="title">CONTACT US</h2>
+    <p class="text-center text-description m-auto">Thank you for reaching out to Patternica Software! Please fill the
+      form below. Our team will contact you shortly.
+    </p>
+    <!-- form -->
+    <form action="" [formGroup]="contactForm" class="contact-form">
+      <!-- name -->
+      <div class="name-block contact-block">
+        <label fxLayout="row" fxLayoutAlign="space-between center">
+          <p fxFlex="1 1 140px" fxShow="true" fxHide.xs="true" class="label-form">Full Name <span
+              class="error-text">*</span></p>
+          <div class="field-container">
+            <input class="field-form" type="text" placeholder="Enter your full name" formControlName="userName"
+              [ngClass]="{
+                'field-valid': contactForm.get('userName').untouched || contactForm.get('userName').valid,
+                'field-invalid': (contactForm.get('userName').dirty || contactForm.get('userName').touched) &&
+                (contactForm.get('userName').errors)
+              }">
+            <p *ngIf="(contactForm.get('userName').dirty || contactForm.get('userName').touched) &&
+          (contactForm.get('userName').errors)" class="error-message p-10 error-text">
+              Error! {{getErr('userName')}}
+            </p>
+          </div>
+        </label>
+      </div>
+      <!-- email -->
+      <div class="email-block contact-block">
+        <label fxLayout="row" fxLayoutAlign="space-between center">
+          <p fxFlex="1 1 140px" fxShow="true" fxHide.xs="true" class="label-form">E-mail<span
+              class="error-text">*</span>
+          </p>
+          <div class="field-container">
+            <input class="field-form" type="text" placeholder="Enter your e-mail" formControlName="userEmail" [ngClass]="{
+              'field-valid': contactForm.get('userEmail').untouched || contactForm.get('userEmail').valid,
+              'field-invalid': (contactForm.get('userEmail').dirty || contactForm.get('userEmail').touched) &&
+              (contactForm.get('userEmail').errors)
+            }">
+            <p *ngIf="(contactForm.get('userEmail').dirty || contactForm.get('userEmail').touched) &&
+          contactForm.get('userEmail').errors" class="error-message p-10 error-text">
+              Error! {{getErr('userEmail')}}
+            </p>
+          </div>
+        </label>
+      </div>
+      <!-- phone -->
+      <div class="phone-block contact-block">
+        <label fxLayout="row" fxLayoutAlign="space-between center">
+          <p fxFlex="1 1 140px" fxShow="true" fxHide.xs="true" class="label-form">Phone
+          </p>
+          <div class="field-container">
+            <input class="field-form" type="text" placeholder="Enter your phone number" formControlName="userPhone"
+              [ngClass]="{
+              'field-valid': contactForm.get('userPhone').untouched || contactForm.get('userPhone').valid,
+              'field-invalid': (contactForm.get('userPhone').dirty || contactForm.get('userPhone').touched) &&
+              (contactForm.get('userPhone').errors)
+            }">
+            <p *ngIf="(contactForm.get('userPhone').dirty || contactForm.get('userPhone').touched) &&
+            contactForm.get('userPhone').errors?.pattern" class="error-message p-10 error-text">
+              Error phone!
+            </p>
+          </div>
+        </label>
+      </div>
+      <!-- company -->
+      <div class="company-block contact-block">
+        <label fxLayout="row" fxLayoutAlign="space-between center">
+          <p fxFlex="1 1 140px" fxShow="true" fxHide.xs="true" class="label-form">Company
+          </p>
+          <div class="field-container">
+            <input class="field-form field-valid" type="text" placeholder="Enter your company name"
+              formControlName="userCompany">
+          </div>
+        </label>
+      </div>
+      <!-- message -->
+      <div class="message-block contact-block">
+        <label fxLayout="row" fxLayoutAlign="space-between start">
+          <p fxFlex="1 1 140px" fxShow="true" fxHide.xs="true" class="label-form">Message
+          </p>
+          <textarea formControlName="message" class="message-field field-valid" placeholder="You can type something...">
+      </textarea>
+        </label>
+      </div>
+      <div class="" fxLayout="row" fxLayoutAlign="space-between start">
+        <div fxShow="true" fxHide.xs="true" class="" fxFlex="1 1 140px"></div>
+        <div fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between start" fxLayout="column-reverse">
+          <div fxFlex="282px">
+            <button mat-raised-button [mat-dialog-close]="contactForm" class="submit-button" color="primary"
+              [disabled]="!contactForm.valid">SUBMIT</button>
+          </div>
+          <p class="submit-text">
+            In the near future our manager will contact you for a more detailed discussion of your issue
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

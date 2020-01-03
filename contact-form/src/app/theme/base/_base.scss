@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+
+.cdk-overlay-pane {
+  max-width: 100% !important;
+}
+
+.mat-dialog-container {
+  padding: 0 14px !important;
+}
+
+.m-auto {
+  margin: 0 auto;
+}

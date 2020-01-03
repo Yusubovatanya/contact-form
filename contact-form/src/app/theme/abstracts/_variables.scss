@@ -1,0 +1,49 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$my-primary-palette: (
+  50: #ededfa,
+  100: #d3d3f2,
+  200: #b6b5ea,
+  300: #9696d0,
+  400: #8281db,
+  500: #6c6bd5,
+  600: #6463d0,
+  700: #5958ca,
+  800: #4f4ec4,
+  900: #3d3cba,
+  A100: #ffffff,
+  A200: #d6d5ff,
+  A400: #a3a2ff,
+  A700: #8a89ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  ));
+
+
+$my-warn-palette: (
+  500: #ff2f43,
+  contrast: (50 : #ffffff)
+);
+
+// colors
+$light: mat-color($my-primary-palette, A100);
+$border-light-primary: mat-color($my-primary-palette, 300);
+$warn: mat-color($my-warn-palette, 500);
+$dark-text: #222326;
+$faded-text: #8e919e;
+$border-light: rgba(1, 1, 116, 0.15);
+$border-dark: rgba(34, 35, 38, 0.15);

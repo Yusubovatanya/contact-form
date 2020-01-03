@@ -1,0 +1,116 @@
+@import "../../../theme/styles.scss";
+
+.label-form {
+  font-weight: bold;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $faded-text;
+  font-weight: 300;
+}
+
+.field-invalid::placeholder {
+  color: $warn;
+}
+
+.field-invalid {
+  @include border-solid(2px, $warn);
+}
+
+.field-valid {
+  @include border-solid(1px, $light);
+}
+
+.field-form {
+  @include text-size(18px, 30px);
+  padding: 0 35px;
+  @extend .text-ellipsis;
+  height: 58px;
+  max-width: 688px;
+  width: 100%;
+  @include b-radius(10px);
+  box-sizing: border-box;
+  box-shadow: 4px 4px 7px 0px $border-dark inset, -1px -1px 1px 0px$border-light inset;
+}
+
+.field-valid:hover,
+.field-valid:focus,
+.field-valid:active {
+  @include border-solid(2px, $border-light-primary);
+}
+
+.contact-box {
+  @include pt(100px);
+  position: relative;
+
+  .close-baton {
+    background: $light;
+    position: absolute;
+    top: 42px;
+    right: 28px;
+    color: $dark-text;
+
+    .mat-icon {
+      height: 35px;
+      width: 35px;
+      @include text-size(35px, 35px);
+    }
+  }
+
+  .contact-container {
+    max-width: 828px;
+
+    .title {
+      margin: 37px 0;
+    }
+
+    .text-description {
+      max-width: 650px;
+      @include text-size(20px, 30px);
+    }
+
+    .contact-form {
+      @include pt(64px);
+      @include text-size(18px, 30px);
+
+      .contact-block {
+        @include pb(25px);
+
+        .field-container {
+          width: 100%;
+          position: relative;
+
+          .error-message {
+            position: absolute;
+            @include pl(35px)
+          }
+        }
+      }
+
+      .message-block {
+        .message-field {
+          @extend .field-form;
+          height: 120px;
+          padding: 15px 35px;
+        }
+
+        .label-form {
+          @include pt(18px);
+        }
+      }
+
+      .submit-button {
+        width: 198px;
+        height: 48px;
+        @include b-radius(10px);
+        @include text-size(16px, 16px)
+      }
+
+      .submit-text {
+        @include pb(15px);
+        @include text-size(14px, 20px)
+      }
+    }
+  }
+}

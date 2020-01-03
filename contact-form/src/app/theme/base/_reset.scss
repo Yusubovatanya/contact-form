@@ -1,0 +1,16 @@
+body,
+h2,
+p {
+  margin: 0;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
